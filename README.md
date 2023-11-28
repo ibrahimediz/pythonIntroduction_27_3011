@@ -4,3 +4,5 @@
 * https://www.codewars.com/
 * https://www.codingame.com/
 * https://www.w3resource.com/python-exercises/
+
+* bit.ly/garanti2811
