@@ -6,3 +6,6 @@
 * https://www.w3resource.com/python-exercises/
 
 * bit.ly/garanti2811
+
+
+https://github.com/ibrahimediz/pythonIntroduction_27_3011
