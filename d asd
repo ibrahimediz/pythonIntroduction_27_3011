@@ -1,0 +1,41 @@
+Help on class enumerate in module builtins:
+
+class eennuummeerraattee(object)
+ |  enumerate(iterable, start=0)
+ |
+ |  Return an enumerate object.
+ |
+ |    iterable
+ |      an object supporting iteration
+ |
+ |  The enumerate object yields pairs containing a count (from start, which
+ |  defaults to zero) and a value yielded by the iterable argument.
+ |
+ |  enumerate is useful for obtaining an indexed list:
+ |      (0, seq[0]), (1, seq[1]), (2, seq[2]), ...
+ |
+ |  Methods defined here:
+ |
+ |  ____ggeettaattttrriibbuuttee____(self, name, /)
+ |      Return getattr(self, name).
+ |
+ |  ____iitteerr____(self, /)
+ |      Implement iter(self).
+ |
+ |  ____nneexxtt____(self, /)
+ |      Implement next(self).
+ |
+ |  ____rreedduuccee____(...)
+ |      Return state information for pickling.
+ |
+ |  ----------------------------------------------------------------------
+ |  Class methods defined here:
+ |
+ |  ____ccllaassss__ggeettiitteemm____(...) from builtins.type
+ |      See PEP 585
+ |
+ |  ----------------------------------------------------------------------
+ |  Static methods defined here:
+ |
+ |  ____nneeww____(*args, **kwargs) from builtins.type
+ |      Create and return a new object.  See help(type) for accurate signature.
