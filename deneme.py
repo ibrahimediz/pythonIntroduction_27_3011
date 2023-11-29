@@ -21,3 +21,13 @@ print(*sys.path,sep="\n")
 # /home/gitpod/.pyenv/versions/3.12.0/lib/python3.12
 # /home/gitpod/.pyenv/versions/3.12.0/lib/python3.12/lib-dynload
 # /workspace/pythonIntroduction_27_3011/test/lib/python3.12/site-packages
+
+
+# def fonk(a:int,b:int)->None:
+#     """
+#     Bu bir fonksiyon boş bir fonksiyon
+#     a => int
+#     b => int
+#     """
+#     print("Merhaba")
+# fonk

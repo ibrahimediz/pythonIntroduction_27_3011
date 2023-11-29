@@ -1,7 +1,7 @@
 import os
 import shutil
 liste = ["HakanOzden","HakanOzel","GamzeCelik","FurkanKeles","MerveSarpBoyar","OzgeCillik","SimgeAydin","IpekDolu"]
-fileName = "02_03_Donguler.ipynb"
+fileName = "03_01_fonksiyonlar.ipynb"
 for item in liste:
     if not os.path.exists(f"Egzersizler/{item}"):
         os.mkdir(f"Egzersizler/{item}")
