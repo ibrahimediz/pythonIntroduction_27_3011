@@ -36,7 +36,20 @@ class Tools:
         else:
             raise Exception("salaryKontrol",veri)
 
-class CheckLog:
+    def tarihKontrol(self,veri,sep="."):
+        liste = veri.split(sep)
+        if len(liste) == 3:
+            gun = liste[0] if int(liste[0]) in range (1,32) else "--"
+            ay = liste[1] if int(liste[1]) in range (1,13) else "--"
+            yil = liste[2] if len(liste[2]) == 4 and liste[2].isdigit() else "--"
+            sonuc = sep.join([gun,ay,yil])
+            if sonuc.count("--") != 0:
+                raise Exception("tarihKontrol",{sonuc})
+            else:
+                return True
+
+
+class CheckLogJson:
     def __init__(self,logAdres,*args,**kwargs):
         self.adres = logAdres
         self.veri = self.dosyaJsonOku()
@@ -47,6 +60,7 @@ class CheckLog:
     def checkLog(self):
         veri = self.veri
         errList = []
+        recList = []
         ############
         idList = [item.get("id") for item in veri]
         for i in range(len(veri)):
@@ -61,14 +75,20 @@ class CheckLog:
                 liste.append(tool.uzunlukKontrol(rec.get("first_name")))
                 liste.append(tool.uzunlukKontrol(rec.get("last_name")))
                 liste.append(tool.idKontrol(idList,rec.get("id")))
+                liste.append(tool.tarihKontrol(rec.get("insert_date")))
+                liste.append(tool.tarihKontrol(rec.get("update_date")))
+                recList.append(rec)
             except Exception as hata:
                 print(i,hata,sep=";",file=open(adres,"a+"))
-            finally:
-                errList.append(liste)
+                errList.append(liste)    
         else:
-            if not all(errList):
+            d1 = open("ornek.json","w+")
+            # print(json.dumps(recList))
+            d1.write(json.dumps(recList))
+            d1.close()
+            if errList:
                 print("Hatalar Var",adres,"dosyayı kontrol ediniz")
-                print(filter(lambda x:errList[]))
+                print(*errList,sep="\n")
 
 
 
@@ -78,5 +98,5 @@ class CheckLog:
         return "_".join(list(map(str,[simdi.year,simdi.month,simdi.day,simdi.hour])))
 
 
-nesne1 = CheckLog("Dokumanlar/OrnekUygulama/json_mock_data.json")
+nesne1 = CheckLogJson("Dokumanlar/OrnekUygulama/json_mock_data.json")
 nesne1.checkLog()
